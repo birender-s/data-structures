@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.Stack;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -56,8 +58,40 @@ public class MyClass {
             String[] split = value.split(" ");
             return (Stream<String>) Arrays.asList(split).stream();
         })
-                .forEach((value) -> System.out.println(value))
+                .forEach((value) -> System.out.println(value))  //terminal operation, to trigger the internal iteration,
+        // and thus flat map operation
         ;
+
+//        //max - largets element from stream
+//        String largest = list.stream()
+//                .max( (val1, val2) -> val1.compareTo(val2))
+//                .get();
+//        System.out.println("max stream element: " + largest);
+
+
+//        //REDUCE - reduce all elements in the stream to a single element.
+//        List<String> stringList = new ArrayList<String>();
+//
+//        stringList.add("One flew over the cuckoo's nest");
+//        stringList.add("To kill a muckingbird");
+//        stringList.add("Gone with the wind");
+//
+//        Stream<String> stream = stringList.stream();
+//
+//        Optional<String> reduced = stream.reduce((value, combinedValue) -> {
+//            return combinedValue + " + " + value;
+//        });
+//        System.out.println(reduced.get()); //=>> Gone with the wind + To kill a muckingbird + One flew over the cuckoo's nest
+
+        List<Integer> listInt = Arrays.asList(10,20,30,40,50);
+        List<Integer> listInt2 = listInt.stream().map( val -> val*2).filter(val -> val>30 && val<80).collect(Collectors.toList());
+        System.out.println(listInt2);       // =>>  [40, 60]
+
+
+        //Method references (in lambda)
+//        listInt.forEach(v1 -> System.out.print(v1));  //option 1
+        listInt.forEach(System.out::print);             //Method Reference - no need of param
+
 
 
 
