@@ -12,7 +12,7 @@ public class NaturalNumbersList {
     public static void main(String[] args) {
         Map<Integer, List<Integer>> map = new HashMap<>();
 
-        String str = "11,5,19,2,8,3,4";
+        String str = "11,5,19,2,8,3,4";     //another sample input  67,32,1
         String[] strArray = str.split(",");
 
         //sorted list
@@ -21,26 +21,27 @@ public class NaturalNumbersList {
 
         List<Integer> outList = new ArrayList<>();
 
-        //get as many possible lists
+        //get all possible lists
         for (int i=1; i<list.size(); i++) {
             naturalNumbers(list, list.size() - i, outList);
             Collections.reverse(outList);
             System.out.println("Output List " + i + ". = "+ outList);
             if (!outList.isEmpty()) {
-                map.put(outList.size(), outList);       //new list of same size will replace old, we do so to get first list element
+                map.put(outList.size(), outList);       //new list of same size (key) will replace old, we do so to get first list element
             }
             outList = new ArrayList<>();        //clear list
         }
 
         if(!map.isEmpty()){
-            Integer max=map.keySet().stream().max(Integer::compareTo).get();
-            System.out.println("Final List " + map.get(max));
+            Integer max=map.keySet().stream().max(Integer::compareTo).get();    //max key in map
+            System.out.println("Final List " + map.get(max));                   //print value with max key
         }else{
-            System.out.println("-1");
+            System.out.println("-1");                                           //not found
         }
 
     }
 
+    // Greedy approach
     public static void naturalNumbers(List<Integer> inList, int index, List<Integer> outList) {
 //        System.out.println("naturalNumbers() inList:"+inList + ", index:" + index + ", outList: " + outList);
         if (inList.isEmpty() || index < 0)
@@ -62,7 +63,7 @@ public class NaturalNumbersList {
         for (int i = index-1; i >= 0; i--) {
 //            System.out.println("for loop, i: " + i);
             for (int j = i-1; j >= 0; j--) {
-                if (checkPairAndUpdate( inList.get(i), inList.get(j), inList.get(index), outList)) {
+                if (addPairIfExists( inList.get(i), inList.get(j), inList.get(index), outList)) {
                     return j;
                 }
             }
@@ -71,14 +72,14 @@ public class NaturalNumbersList {
 
     }
 
-    public static boolean checkPairAndUpdate(Integer i, Integer j, Integer sumValue, List<Integer> updatedlist){
-//        System.out.println("checkPairAndUpdate() i:"+i + ", j:" + j + ", sumValue: " + sumValue + ", updatedlist: " + updatedlist);
+    public static boolean addPairIfExists(Integer i, Integer j, Integer sumValue, List<Integer> updatedlist){
+//        System.out.println("addPairIfExists() i:"+i + ", j:" + j + ", sumValue: " + sumValue + ", updatedlist: " + updatedlist);
         if (i + j == sumValue) {
             if(updatedlist.isEmpty()) {     //add only for first time
                 updatedlist.add(sumValue);
                 updatedlist.add(i);
             }
-            updatedlist.add(j);
+            updatedlist.add(j);             //add smaller element in pair
 //            System.out.println("pair found");
             return true;
         }
