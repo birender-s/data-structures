@@ -34,7 +34,7 @@ public class NaturalNumbersList {
 
         if(!map.isEmpty()){
             Integer max=map.keySet().stream().max(Integer::compareTo).get();    //max key in map
-            System.out.println("Final List " + map.get(max));                   //print value with max key
+            System.out.print(map.get(max).stream().map(v->v.toString()).collect(Collectors.joining(",")));
         }else{
             System.out.println("-1");                                           //not found
         }
