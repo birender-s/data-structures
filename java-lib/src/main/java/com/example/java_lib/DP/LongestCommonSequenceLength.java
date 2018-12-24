@@ -1,9 +1,10 @@
-package com.example.java_lib;
+package com.example.java_lib.DP;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Dynamic Programming Example
  * https://www.techiedelight.com/longest-common-subsequence/
  */
 public class LongestCommonSequenceLength {
@@ -15,8 +16,9 @@ public class LongestCommonSequenceLength {
     {
         System.out.println("\nLCSLength(" + X + ", " + Y + ", " + m +", " + n + ", " + lookup.toString() + ")");
 //        printMap(lookup);
-        // return if we have reached the end of either string
-        if (m == 0 || n == 0)
+
+        //Base cases:
+        if (m == 0 || n == 0)       // return if we have reached the end of either string
             return 0;
 
         // construct a unique map key from dynamic elements of the input

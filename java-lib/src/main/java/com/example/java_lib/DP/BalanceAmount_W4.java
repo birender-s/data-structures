@@ -1,4 +1,4 @@
-package com.example.java_lib;
+package com.example.java_lib.DP;
 
 import java.util.ArrayList;
 import java.util.Arrays;
