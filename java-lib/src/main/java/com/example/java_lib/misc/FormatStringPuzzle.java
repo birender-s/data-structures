@@ -1,4 +1,4 @@
-package com.example.java_lib;
+package com.example.java_lib.misc;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

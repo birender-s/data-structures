@@ -1,4 +1,4 @@
-package com.example.java_lib;
+package com.example.java_lib.misc;
 
 import java.util.ArrayList;
 import java.util.Arrays;

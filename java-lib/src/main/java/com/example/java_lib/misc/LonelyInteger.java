@@ -1,10 +1,11 @@
-package com.example.java_lib;
+package com.example.java_lib.misc;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 
@@ -38,8 +39,14 @@ public class LonelyInteger {
 //        System.out.println("output:" + map.entrySet().stream()
 //                .filter(val -> val.getValue() == 1).collect(Collectors.toList()).get(0).getKey());
 
-        //approach 2: uses XOR operator in reducer
-        System.out.println("output:" + arrayList.stream().reduce( (v1, v2) -> v1^v2 ).orElse(0));
+//        //approach 2: uses XOR operator in reducer
+//        System.out.println("output:" + arrayList.stream().reduce( (v1, v2) -> v1^v2 ).orElse(0));
+
+        //approach 3: set (removes duplicates)
+        Set <Integer> set = new HashSet<Integer>(arrayList.stream().collect(Collectors.toList()));
+        System.out.println("output:" + set.size());
+
+
 
 
     }
