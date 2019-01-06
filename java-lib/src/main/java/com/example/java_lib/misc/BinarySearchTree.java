@@ -18,15 +18,6 @@ public class BinarySearchTree {
             this.data=data;
             leftChild = rightChild = null;
         }
-
-        public void addLeftChild(Node node){
-            this.leftChild=node;
-        }
-
-        public void addRightChild(Node node){
-            this.rightChild=node;
-        }
-
     }
 
     private Node root;

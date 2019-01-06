@@ -12,12 +12,12 @@ an undirected graph
     // Size of array will be V (number of vertices
     // in graph)
  */
-public class UnDirectedGraph {
+public class GraphUnDirected {
     int V;
     LinkedList<Integer>[] adjListArray;
 
     // constructor
-    UnDirectedGraph(int V) {
+    GraphUnDirected(int V) {
         this.V = V;
         // define the size of array as
         // number of vertices
@@ -71,7 +71,7 @@ public class UnDirectedGraph {
     // Driver program to test above
     public static void main(String[] args){
         // Create a graph given in the above diagram
-        UnDirectedGraph g = new UnDirectedGraph(5); // 5 vertices numbered from 0 to 4
+        GraphUnDirected g = new GraphUnDirected(5); // 5 vertices numbered from 0 to 4
 
         g.addEdge(1, 0);
         g.addEdge(2, 3);

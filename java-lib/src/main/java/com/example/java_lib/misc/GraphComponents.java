@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 //https://www.hackerrank.com/contests/cs-dsa-01/challenges/components-in-graph
-//Refer to UnDirectedGraph class implementation before this
+//Refer to GraphUnDirected class implementation before this
 
 /*
 There are  values to represent nodes in a graph. They are divided into two sets  and . Each set has exactly  values. Set  is represent by .  can contain any value between  to (inclusive). Set  is represented by .  can contain any value between  to (inclusive). Same value can be chosen any number of times.
@@ -49,10 +49,10 @@ Explanation
 The number of vertices in the smallest connected component in the graph is  i.e. either  or .
 The number of vertices in the largest connected component in the graph is  i.e. .
  */
-public class ComponentsInGraph {
+public class GraphComponents {
     HashMap<Integer, LinkedList<Integer>> adjListMap;
 
-    ComponentsInGraph(){
+    GraphComponents(){
         adjListMap = new HashMap<>();
     }
 
@@ -76,7 +76,7 @@ public class ComponentsInGraph {
     }
 
 
-    static int DFSUtil(ComponentsInGraph g, int v, HashMap <Integer, Boolean>  visited) {
+    static int DFSUtil(GraphComponents g, int v, HashMap <Integer, Boolean>  visited) {
         int count = 1;
         // Mark the current node as visited and print it
         visited.put(v, true);
@@ -101,7 +101,7 @@ public class ComponentsInGraph {
         result[0]=0;
         result[1]=0;
 
-        ComponentsInGraph g = new ComponentsInGraph();
+        GraphComponents g = new GraphComponents();
         for (int i = 0; i<gb.length; i++){
             g.addEdge(gb[i][0], gb[i][1]);
         }
