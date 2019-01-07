@@ -54,7 +54,7 @@ The number of vertices in the largest connected component in the graph is  i.e. 
 public class GraphComponents {
     HashMap<Integer, LinkedList<Integer>> adjListMap;
 
-    GraphComponents(){
+    public GraphComponents(){
         adjListMap = new HashMap<>();
     }
 
@@ -76,8 +76,7 @@ public class GraphComponents {
         adjListMap.put(dest, list);
     }
 
-
-    static int DFSUtil(GraphComponents g, int v, HashMap <Integer, Boolean>  visited) {
+    protected static int DFSUtil(GraphComponents g, int v, HashMap <Integer, Boolean>  visited) {
         int count = 1;
         // Mark the current node as visited and print it
         visited.put(v, true);
@@ -91,7 +90,6 @@ public class GraphComponents {
         }
         return count;
     }
-
 
     /*
      * Complete the componentsInGraph function below.
@@ -134,21 +132,18 @@ public class GraphComponents {
         return result;
     }
 
-
-
-
     private static final Scanner scanner = new Scanner(System.in);
 
     // Driver program to test above
     public static void main(String[] args){
         /*
         Sample Input:
-5
-1 6
-2 7
-3 8
-4 9
-2 6
+        5
+        1 6
+        2 7
+        3 8
+        4 9
+        2 6
          */
 
         int n = Integer.parseInt(scanner.nextLine().trim());
@@ -168,7 +163,5 @@ public class GraphComponents {
         System.out.println("final result:: smallest: " + result[0] + ", largest: " + result[1]);
 
     }
-
-
 
 }
