@@ -43,6 +43,7 @@ public class GraphUnDirected {
     }
 
 
+    //Depth First Search (DFS)
     void DFSUtil(int v, boolean[] visited) {
         // Mark the current node as visited and print it
         visited[v] = true;

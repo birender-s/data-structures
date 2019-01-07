@@ -8,7 +8,9 @@ import java.util.Scanner;
 //Refer to GraphUnDirected class implementation before this
 
 /*
-There are  values to represent nodes in a graph. They are divided into two sets  and . Each set has exactly  values. Set  is represent by .  can contain any value between  to (inclusive). Set  is represented by .  can contain any value between  to (inclusive). Same value can be chosen any number of times.
+There are  values to represent nodes in a graph. They are divided into two sets  and . Each set has exactly  values.
+Set  is represent by .  can contain any value between  to (inclusive).
+Set  is represented by .  can contain any value between  to (inclusive). Same value can be chosen any number of times.
 
 Here  represents the edges of the graph.
 
@@ -65,8 +67,7 @@ public class GraphComponents {
         list.add(dest);
         adjListMap.put(src, list);
 
-        // Since graph is undirected, add an edge from dest
-        // to src also
+        // Since graph is undirected, add an edge from dest to src also
         list = adjListMap.get(dest);
         if (null == list){
             list = new LinkedList<>();
