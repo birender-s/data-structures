@@ -1,9 +1,9 @@
 package com.example.java_lib.misc;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -23,9 +23,8 @@ Output should be:
 
 public class LonelyInteger {
     public static void main (String[] args){
-        ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(1,1,5,4,3,3,5,6,7,2,7,6,2));
+        List<Integer> arrayList = Arrays.asList(1,1,5,4,3,3,5,6,7,2,7,6,2);
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-
 
         //approach 1:
 //        arrayList.stream()

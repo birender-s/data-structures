@@ -14,7 +14,6 @@ public class PalindromeString {
             if (str.charAt(i) != str.charAt(str.length()-i-1))
                 return false;
         }
-
         return true;
     }
 
