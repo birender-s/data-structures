@@ -14,16 +14,13 @@ public class ClimbingTheLeaderBoard {
 
     // Complete the climbingLeaderboard function below.
     static int[] climbingLeaderboard(int[] scores, int[] alice) {
-        Set <Integer> scoresSet = new HashSet<Integer>();
+        Set <Integer> scoresSet = new HashSet<>();
         for (int i=0;i<scores.length;i++)
             scoresSet.add(scores[i]);
         // System.out.println("scoresSet size: "+ scoresSet.size());
 
         List<Integer> marksList = scoresSet.stream().collect(Collectors.toList());
         marksList.sort(Comparator.reverseOrder());
-
-        Integer[] marksArry = marksList.stream().toArray(Integer[]::new);
-        // marksArry.sort();
 
         int [] aliceScores = new int[alice.length];
 

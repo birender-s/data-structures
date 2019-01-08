@@ -44,6 +44,8 @@ public class FunctionalPalindromes {
 
         //now calculate
         long a = 100001;
+
+        //TODO: move m outside as its a constant value
         BigInteger m = BigDecimal.valueOf(Math.pow(10,9) + 7).toBigInteger();
 //        long val = 0;
         BigInteger sum = new BigInteger("0");

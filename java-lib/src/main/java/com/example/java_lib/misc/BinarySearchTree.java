@@ -18,6 +18,11 @@ public class BinarySearchTree {
             this.data=data;
             leftChild = rightChild = null;
         }
+
+        @Override
+        public String toString() {
+            return "[Node: Data: " + data + "]";
+        }
     }
 
     private Node root;
@@ -84,6 +89,8 @@ public class BinarySearchTree {
         tree.insert(80);
 
         tree.inorder();
+
+        System.out.println("\nSearch 30 result: " + tree.search(30));
     }
 
 }

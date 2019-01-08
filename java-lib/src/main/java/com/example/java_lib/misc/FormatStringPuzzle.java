@@ -29,8 +29,8 @@ public class FormatStringPuzzle {
                                 .collect(Collectors.joining());
                     } else {    //odd position
                         String[] splitStr = strArray[i].split("");
-                        StringBuffer evenPos = new StringBuffer();
-                        StringBuffer oddPos = new StringBuffer();
+                        StringBuilder evenPos = new StringBuilder();
+                        StringBuilder oddPos = new StringBuilder();
                         for (int j=0;j<splitStr.length;j++){
                             if (j%2 == 0){
                                 evenPos.append(splitStr[j]);
