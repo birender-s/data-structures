@@ -44,9 +44,11 @@ public class GraphWarshallAlgo {
             }
         }
 
+        //update for indirect paths
         for (int k=0; k<adjListMap.size(); k++){
             for (int i=0; i<adjListMap.size(); i++) {
                 for (int j = 0; j < adjListMap.size(); j++) {
+                    //Note: path reachable if OR returns true
                     pathMatrix[i][j] =  (pathMatrix[i][j]) || (pathMatrix[i][k] && pathMatrix[k][j]);
                 }
             }

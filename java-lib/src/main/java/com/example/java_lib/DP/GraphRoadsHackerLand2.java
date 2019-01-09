@@ -36,17 +36,17 @@ public class GraphRoadsHackerLand2 {
     BigInteger [][] pathMatrix;
 
     public BigInteger getPathMatrix(int n, int[][] roads){
-        long start = System.currentTimeMillis();
-        System.out.println("Time1: " + start);
+//        long start = System.currentTimeMillis();
+//        System.out.println("Time1: " + start);
         pathMatrix = new BigInteger[n+1][n+1];
         for (int i = 0; i < pathMatrix.length; i++) {
             for (int j = 0; j < pathMatrix.length; j++) {
                 pathMatrix[i][j] = BigInteger.ZERO;
             }
         }
-        long newTime = System.currentTimeMillis();
-        System.out.println("Time2: " + (newTime - start));
-        start = newTime;
+//        long newTime = System.currentTimeMillis();
+//        System.out.println("Time2: " + (newTime - start));
+//        start = newTime;
 
 
         for (int i=0; i<roads.length; i++){
@@ -57,9 +57,9 @@ public class GraphRoadsHackerLand2 {
                 pathMatrix[roads[i][1]][roads[i][0]] = pathMatrix[roads[i][0]][roads[i][1]] = BigInteger.valueOf(2).pow(roads[i][2]);
             }
         }
-        newTime = System.currentTimeMillis();
-        System.out.println("Time3: " + (newTime - start));
-        start = newTime;
+//        newTime = System.currentTimeMillis();
+//        System.out.println("Time3: " + (newTime - start));
+//        start = newTime;
 
         //find and update shortest path
         for (int k=0; k<pathMatrix.length; k++) {   //k is intermediate route
@@ -73,9 +73,9 @@ public class GraphRoadsHackerLand2 {
             }
         }
 
-        newTime = System.currentTimeMillis();
-        System.out.println("Time4: " + (newTime - start));
-        start = newTime;
+//        newTime = System.currentTimeMillis();
+//        System.out.println("Time4: " + (newTime - start));
+//        start = newTime;
 
 
         //now get the sum
@@ -84,16 +84,15 @@ public class GraphRoadsHackerLand2 {
             for (int j = 0; j < pathMatrix.length; j++) {   //col
 //                System.out.println("pathMatrix[" + i + "][" + j + "]: " + pathMatrix[i][j]);
 
-                //Note: this is the check for shortest path
                 if (i<j) {
                     sum = sum.add(pathMatrix[i][j]);
                 }
             }
         }
 
-        newTime = System.currentTimeMillis();
-        System.out.println("Time5: " + (newTime - start));
-        start = newTime;
+//        newTime = System.currentTimeMillis();
+//        System.out.println("Time5: " + (newTime - start));
+//        start = newTime;
 
         return sum;
         }
